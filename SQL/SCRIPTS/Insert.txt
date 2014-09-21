@@ -1,0 +1,2 @@
+insert  into Persons(PersonID,LastName,FirstName,Address,City)
+select 1,'Ablagei','Dima','Vishnivec','Grodno'
