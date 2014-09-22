@@ -1,0 +1,5 @@
+C:\test\8\04\MyWebSolution\WebCustomControlSol\bin\WebCustomControlSol.dll
+C:\test\8\04\MyWebSolution\WebCustomControlSol\bin\WebCustomControlSol.pdb
+C:\test\8\04\MyWebSolution\WebCustomControlSol\obj\Debug\ResolveAssemblyReference.cache
+C:\test\8\04\MyWebSolution\WebCustomControlSol\obj\Debug\WebCustomControlSol.dll
+C:\test\8\04\MyWebSolution\WebCustomControlSol\obj\Debug\WebCustomControlSol.pdb
