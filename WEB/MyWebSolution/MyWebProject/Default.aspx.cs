@@ -15,27 +15,23 @@ namespace MyTestWebApp
 {
     public partial class _Default : System.Web.UI.Page
     {
-         Publisher PB;
+         Author auth;
 
         protected void Page_Load(object sender, EventArgs e)
-        {
-            if (Page.IsPostBack == false)
-            {
-                // next two lines not related to the BookStore Project. 
-                PB = new Publisher();
-                PB.GetAuthorsByState("wa");
-            }     
+        {    
         }
-
 
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            InsertNewAuthor(TextBox1.Text, TextBox2.Text, Convert.ToDateTime(TextBox3.Text));
+            auth = new Author(TextBox1.Text, TextBox2.Text, Convert.ToDateTime(TextBox3.Text));
+            auth.InsertAuth();
 
+            //InsertNewAuthor(TextBox1.Text, TextBox2.Text, Convert.ToDateTime(TextBox3.Text));
         }
 
-        private  void InsertNewAuthor(string First, string Last, DateTime dob)
+
+       /* private  void InsertNewAuthor(string First, string Last, DateTime dob)
         {
             string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
             //  SqlConnection cnn = new SqlConnection(@"Data Source=GENNASPC\BOOKSTOREINST;Initial Catalog=BookStore;User ID=sa;Password=test");
@@ -62,6 +58,6 @@ namespace MyTestWebApp
                 }
             }
         
-        }
+        }*/
     }
 }

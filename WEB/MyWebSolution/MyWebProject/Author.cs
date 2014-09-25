@@ -7,14 +7,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MyTestWebApp
 {
     public class Author
     {
+        private int m_authID=-1;
         private string m_firstname;
         private string m_lastname;
         private DateTime m_dob;
+        private string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
 
         public string Lastname
         {
@@ -41,5 +45,131 @@ namespace MyTestWebApp
             this.m_dob = DateOfBirth;
         }
 
+
+        public void InsertAuth()
+        {
+
+            //  string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
+            //  SqlConnection cnn = new SqlConnection(@"Data Source=GENNASPC\BOOKSTOREINST;Initial Catalog=BookStore;User ID=sa;Password=test");
+
+            using (SqlConnection cnn = new SqlConnection(ConStrValue))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = "InsertNewAuthor"; // Name of the SP that insert one autor
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@FirstName", m_firstname));
+                    cmd.Parameters.Add(new SqlParameter("@LastName", m_lastname));
+                    cmd.Parameters.Add(new SqlParameter("@dob", m_dob));
+                    cmd.Connection = cnn;
+
+                    cnn.Open();
+                    //cmd.BeginExecuteNonQuery();
+                    cmd.BeginExecuteReader();
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
+
+         public void DeleteAuth()
+         {
+             if (m_authID >= 0)
+             {
+                 //string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
+
+                 using (SqlConnection cnn = new SqlConnection(ConStrValue))
+                 {
+                     try
+                     {
+                         SqlCommand cmd = new SqlCommand();
+                         cmd.CommandText = "DeleteAuthor"; // Name of the SP that delete one autor by ID
+                         cmd.CommandType = CommandType.StoredProcedure;
+                         cmd.Parameters.Add(new SqlParameter("@AuthID", m_authID));
+                         cmd.Connection = cnn;
+
+                         cnn.Open();
+                         //cmd.BeginExecuteNonQuery();
+                         cmd.BeginExecuteReader();
+                     }
+                     catch (Exception ex)
+                     {
+
+                     }
+                 }
+             }
+         }
+
+         public void UpdateAuth()
+         {
+             if (m_authID >= 0)
+             {
+                 //string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
+
+                 using (SqlConnection cnn = new SqlConnection(ConStrValue))
+                 {
+                     try
+                     {
+                         SqlCommand cmd = new SqlCommand();
+                         cmd.CommandText = "UpdateAuthor"; // Name of the SP that delete one autor by ID
+                         cmd.CommandType = CommandType.StoredProcedure;
+                         cmd.Parameters.Add(new SqlParameter("@AuthID", m_authID));
+                         cmd.Parameters.Add(new SqlParameter("@FirstName", m_firstname));
+                         cmd.Parameters.Add(new SqlParameter("@LastName", m_lastname));
+                         cmd.Parameters.Add(new SqlParameter("@dob", m_dob));
+                         cmd.Connection = cnn;
+
+                         cnn.Open();
+                         //cmd.BeginExecuteNonQuery();
+                         cmd.BeginExecuteReader();
+                     }
+                     catch (Exception ex)
+                     {
+
+                     }
+                 }
+             }
+         }
+
+
+         public DataTable AuthorByLastName(string lastname)
+         {
+             DataTable table = new DataTable();
+             
+             // connectin string taken from Web.config
+             //string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
+
+             using (SqlConnection cnn = new SqlConnection(ConStrValue))
+             {
+                 try
+                 {
+                     SqlCommand cmd = new SqlCommand();
+                     cmd.CommandText = "GetAuthorByName"; // Name of the SP that return all autors
+                     cmd.CommandType = CommandType.StoredProcedure;
+                     cmd.Parameters.Add(new SqlParameter("@LastName", lastname));  // this code can be usfule if parameters passed to the SP
+                     cmd.Connection = cnn;
+
+                     cnn.Open();
+
+                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                     {
+                         
+                         sda.Fill(table);
+           
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+
+                 }
+             }
+             return table;
+         }
+
+
     }
-}
+  }
+
