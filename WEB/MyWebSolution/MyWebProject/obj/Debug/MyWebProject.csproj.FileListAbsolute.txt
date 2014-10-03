@@ -5,3 +5,10 @@ C:\School_2014\Fall_2014\CS2540\MyWebSolution\MyWebSolution\MyWebProject\bin\Web
 C:\School_2014\Fall_2014\CS2540\MyWebSolution\MyWebSolution\MyWebProject\obj\Debug\MyWebProject.csprojResolveAssemblyReference.cache
 C:\School_2014\Fall_2014\CS2540\MyWebSolution\MyWebSolution\MyWebProject\obj\Debug\MyWebProject.dll
 C:\School_2014\Fall_2014\CS2540\MyWebSolution\MyWebSolution\MyWebProject\obj\Debug\MyWebProject.pdb
+C:\School_2014\Fall_2014\CS2540\BookStoreProj\WEB\MyWebSolution\MyWebProject\obj\Debug\MyWebProject.csprojResolveAssemblyReference.cache
+C:\School_2014\Fall_2014\CS2540\BookStoreProj\WEB\MyWebSolution\MyWebProject\obj\Debug\MyWebProject.dll
+C:\School_2014\Fall_2014\CS2540\BookStoreProj\WEB\MyWebSolution\MyWebProject\bin\MyWebProject.dll
+C:\School_2014\Fall_2014\CS2540\BookStoreProj\WEB\MyWebSolution\MyWebProject\bin\MyWebProject.pdb
+C:\School_2014\Fall_2014\CS2540\BookStoreProj\WEB\MyWebSolution\MyWebProject\bin\WebCustomControlSol.dll
+C:\School_2014\Fall_2014\CS2540\BookStoreProj\WEB\MyWebSolution\MyWebProject\bin\WebCustomControlSol.pdb
+C:\School_2014\Fall_2014\CS2540\BookStoreProj\WEB\MyWebSolution\MyWebProject\obj\Debug\MyWebProject.pdb

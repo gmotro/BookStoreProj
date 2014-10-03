@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
-using System.Configuration;
+using MyWebProject;
 
 namespace MyTestWebApp
 {
@@ -18,7 +18,6 @@ namespace MyTestWebApp
         private string m_firstname;
         private string m_lastname;
         private DateTime m_dob;
-        private string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
 
         public string Lastname
         {
@@ -49,10 +48,8 @@ namespace MyTestWebApp
         public void InsertAuth()
         {
 
-            //  string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
-            //  SqlConnection cnn = new SqlConnection(@"Data Source=GENNASPC\BOOKSTOREINST;Initial Catalog=BookStore;User ID=sa;Password=test");
 
-            using (SqlConnection cnn = new SqlConnection(ConStrValue))
+            using (SqlConnection cnn = new SqlConnection(Helper.ConStrValue))
             {
                 try
                 {
@@ -78,10 +75,9 @@ namespace MyTestWebApp
          public void DeleteAuth()
          {
              if (m_authID >= 0)
-             {
-                 //string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
+             {                
 
-                 using (SqlConnection cnn = new SqlConnection(ConStrValue))
+                 using (SqlConnection cnn = new SqlConnection(Helper.ConStrValue))
                  {
                      try
                      {
@@ -107,9 +103,8 @@ namespace MyTestWebApp
          {
              if (m_authID >= 0)
              {
-                 //string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
 
-                 using (SqlConnection cnn = new SqlConnection(ConStrValue))
+                 using (SqlConnection cnn = new SqlConnection(Helper.ConStrValue))
                  {
                      try
                      {
@@ -139,10 +134,7 @@ namespace MyTestWebApp
          {
              DataTable table = new DataTable();
              
-             // connectin string taken from Web.config
-             //string ConStrValue = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
-
-             using (SqlConnection cnn = new SqlConnection(ConStrValue))
+             using (SqlConnection cnn = new SqlConnection(Helper.ConStrValue))
              {
                  try
                  {
