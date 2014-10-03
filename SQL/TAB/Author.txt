@@ -6,7 +6,6 @@ create table Author (
         AuthorID int IDENTITY(1,1) not null,
         AuthorFirstName varchar(30),
 		AuthorLastName varchar(30),
-		AuthorMidleName varchar(30),
         Author_DOB date,
 		 CONSTRAINT [PK_History] PRIMARY KEY CLUSTERED 
 (
