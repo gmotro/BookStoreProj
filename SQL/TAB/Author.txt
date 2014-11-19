@@ -1,16 +1,16 @@
---IF OBJECT_ID ('dbo.Author', 'U') IS NOT NULL
---   DROP TABLE Author;
---GO
+IF OBJECT_ID ('dbo.Author', 'U') IS NOT NULL
+  DROP TABLE Author;
+GO
 
-create table Author (
-        AuthorID int IDENTITY(1,1) not null,
-        AuthorFirstName varchar(30),
-		AuthorLastName varchar(30),
-        Author_DOB date,
-		 CONSTRAINT [PK_History] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[Author](
+	[AuthorID] [int] IDENTITY(1,1) NOT NULL,
+	[AuthorFirstName] [varchar](30) NULL,
+	[AuthorLastName] [varchar](30) NULL,
+	[Author_DOB] [date] NULL,
+ CONSTRAINT [PK_History] PRIMARY KEY CLUSTERED 
 (
-    AuthorID ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON)
+	[AuthorID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO

@@ -13,6 +13,20 @@ namespace MyTestWebApp
 {
     public class Publisher
     {
+        private int m_PublisherID = -1;
+        private string m_PublisherName;
+
+        public string PublisherName
+        {
+            get { return m_PublisherName; }
+            set { m_PublisherName = value; }
+        }
+
+        // Constructor with parameters
+        public Publisher(string PublisherName)
+        {
+            this.m_PublisherName = PublisherName;
+        }
 
         public List<Author> GetAuthorsByState(string state)
         {
@@ -24,8 +38,9 @@ namespace MyTestWebApp
                 authors.Add(new Author("Bob", "Jones", DateTime.Today));
                 authors.Add(new Author("Fred", "Baker", DateTime.Today));
             }
-
             return authors;
         }
+
+
     }
 }

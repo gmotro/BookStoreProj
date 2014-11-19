@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
+using System.IO;
+using System.Collections.Generic;
 using MyWebProject;
 
 namespace MyTestWebApp
@@ -17,7 +19,7 @@ namespace MyTestWebApp
         private int m_authID=-1;
         private string m_firstname;
         private string m_lastname;
-        private DateTime m_dob;
+        private DateTime m_dob;        
 
         public string Lastname
         {
@@ -37,6 +39,7 @@ namespace MyTestWebApp
             set { m_dob = value; }
         }
 
+        // Constructor with parameters
         public Author(string firstname, string lastname, DateTime DateOfBirth)
         {
             this.m_firstname = firstname;
@@ -44,58 +47,25 @@ namespace MyTestWebApp
             this.m_dob = DateOfBirth;
         }
 
-
+        // insert single row to the dbo.Author
         public void InsertAuth()
         {
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("@FirstName", m_firstname);
+            parameters.Add("@LastName", m_lastname);
+            parameters.Add("@dob", m_dob);
 
-
-            using (SqlConnection cnn = new SqlConnection(Helper.ConStrValue))
-            {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "InsertNewAuthor"; // Name of the SP that insert one autor
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@FirstName", m_firstname));
-                    cmd.Parameters.Add(new SqlParameter("@LastName", m_lastname));
-                    cmd.Parameters.Add(new SqlParameter("@dob", m_dob));
-                    cmd.Connection = cnn;
-
-                    cnn.Open();
-                    //cmd.BeginExecuteNonQuery();
-                    cmd.BeginExecuteReader();
-                }
-                catch (Exception ex)
-                {
-
-                }
-            }
+            Helper.RunStoredProcedure("InsertNewAuthor", parameters);
         }
 
          public void DeleteAuth()
          {
              if (m_authID >= 0)
-             {                
+             {
+                 Dictionary<string, object> parameters = new Dictionary<string, object>();
+                 parameters.Add("@AuthID", m_authID);
 
-                 using (SqlConnection cnn = new SqlConnection(Helper.ConStrValue))
-                 {
-                     try
-                     {
-                         SqlCommand cmd = new SqlCommand();
-                         cmd.CommandText = "DeleteAuthor"; // Name of the SP that delete one autor by ID
-                         cmd.CommandType = CommandType.StoredProcedure;
-                         cmd.Parameters.Add(new SqlParameter("@AuthID", m_authID));
-                         cmd.Connection = cnn;
-
-                         cnn.Open();
-                         //cmd.BeginExecuteNonQuery();
-                         cmd.BeginExecuteReader();
-                     }
-                     catch (Exception ex)
-                     {
-
-                     }
-                 }
+                 Helper.RunStoredProcedure("DeleteAuthor", parameters);
              }
          }
 
@@ -103,29 +73,13 @@ namespace MyTestWebApp
          {
              if (m_authID >= 0)
              {
+                 Dictionary<string, object> parameters = new Dictionary<string, object>();
+                 parameters.Add("@AuthID", m_authID);
+                 parameters.Add("@FirstName", m_firstname);
+                 parameters.Add("@LastName", m_lastname);
+                 parameters.Add("@dob", m_dob);
 
-                 using (SqlConnection cnn = new SqlConnection(Helper.ConStrValue))
-                 {
-                     try
-                     {
-                         SqlCommand cmd = new SqlCommand();
-                         cmd.CommandText = "UpdateAuthor"; // Name of the SP that delete one autor by ID
-                         cmd.CommandType = CommandType.StoredProcedure;
-                         cmd.Parameters.Add(new SqlParameter("@AuthID", m_authID));
-                         cmd.Parameters.Add(new SqlParameter("@FirstName", m_firstname));
-                         cmd.Parameters.Add(new SqlParameter("@LastName", m_lastname));
-                         cmd.Parameters.Add(new SqlParameter("@dob", m_dob));
-                         cmd.Connection = cnn;
-
-                         cnn.Open();
-                         //cmd.BeginExecuteNonQuery();
-                         cmd.BeginExecuteReader();
-                     }
-                     catch (Exception ex)
-                     {
-
-                     }
-                 }
+                 Helper.RunStoredProcedure("UpdateAuthor", parameters);
              }
          }
 
@@ -133,34 +87,13 @@ namespace MyTestWebApp
          public DataTable AuthorByLastName(string lastname)
          {
              DataTable table = new DataTable();
-             
-             using (SqlConnection cnn = new SqlConnection(Helper.ConStrValue))
-             {
-                 try
-                 {
-                     SqlCommand cmd = new SqlCommand();
-                     cmd.CommandText = "GetAuthorByName"; // Name of the SP that return all autors
-                     cmd.CommandType = CommandType.StoredProcedure;
-                     cmd.Parameters.Add(new SqlParameter("@LastName", lastname));  // this code can be usfule if parameters passed to the SP
-                     cmd.Connection = cnn;
+             Dictionary<string, object> parameters = new Dictionary<string, object>();
+             parameters.Add("@LastName", lastname);
 
-                     cnn.Open();
+             table = Helper.RunStoredProcedureReturnDataTable("GetAuthorByName", parameters);
 
-                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                     {
-                         
-                         sda.Fill(table);
-           
-                     }
-                 }
-                 catch (Exception ex)
-                 {
-
-                 }
-             }
              return table;
          }
-
 
     }
   }

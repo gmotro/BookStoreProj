@@ -54,24 +54,39 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Author.cs" />
-    <Compile Include="DataSample.aspx.cs">
-      <DependentUpon>DataSample.aspx</DependentUpon>
+    <Compile Include="Book.cs" />
+    <Compile Include="BookDetails.aspx.cs">
+      <DependentUpon>BookDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DataSample.aspx.designer.cs">
-      <DependentUpon>DataSample.aspx</DependentUpon>
+    <Compile Include="BookDetails.aspx.designer.cs">
+      <DependentUpon>BookDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="InsertNewBook.aspx.cs">
+      <DependentUpon>InsertNewBook.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="InsertNewBook.aspx.designer.cs">
+      <DependentUpon>InsertNewBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontPage.aspx.cs">
+      <DependentUpon>FrontPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontPage.aspx.designer.cs">
+      <DependentUpon>FrontPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Genre.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publisher.cs" />
+    <Compile Include="SearchBookInfo.aspx.cs">
+      <DependentUpon>SearchBookInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchBookInfo.aspx.designer.cs">
+      <DependentUpon>SearchBookInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -79,25 +94,19 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="UserControlSample.aspx.cs">
-      <DependentUpon>UserControlSample.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControlSample.aspx.designer.cs">
-      <DependentUpon>UserControlSample.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataSample.aspx" />
-    <Content Include="Default.aspx" />
-    <Content Include="UserControlSample.aspx" />
+    <Content Include="BookDetails.aspx" />
+    <Content Include="InsertNewBook.aspx" />
+    <Content Include="FrontPage.aspx" />
+    <Content Include="SearchBookInfo.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
-    <Content Include="Web.config">
+    <Content Include="Web.config" />
+    <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebCustomControlSol\WebCustomControlSol.csproj">

@@ -1,5 +1,0 @@
--- Populate table Author
-        INSERT Author (AuthorFirstName, AuthorLastName, Author_DOB) VALUES ('Josephs','Karin', GETDATE());
-        INSERT INTO Author( AuthorFirstName,AuthorLastName,Author_DOB) VALUES ('George','Orwell',GETDATE());
-        INSERT INTO Author( AuthorFirstName,AuthorLastName,Author_DOB) VALUES ('Stephen','Hawking',GETDATE());
-        INSERT INTO Author( AuthorFirstName,AuthorLastName,Author_DOB) VALUES ('Dave','Eggers',GETDATE());
