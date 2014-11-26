@@ -187,4 +187,10 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
+
 Web.config
+WEB/MyWebSolution/MyWebProject/Web.config
+WEB/MyWebSolution/WebCustomControlSol/obj/*
+WEB/MyWebSolution/WebCustomControlSol/bin/*
+WEB/MyWebSolution/MyWebProject/obj/*
+WEB/MyWebSolution/MyWebProject/bin/*

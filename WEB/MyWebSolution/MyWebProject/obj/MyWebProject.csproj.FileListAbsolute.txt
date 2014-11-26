@@ -1,7 +1,0 @@
-C:\test\8\04\MyWebSolution\MyWebProject\obj\Debug\ResolveAssemblyReference.cache
-C:\test\8\04\MyWebSolution\MyWebProject\bin\MyWebProject.dll
-C:\test\8\04\MyWebSolution\MyWebProject\bin\MyWebProject.pdb
-C:\test\8\04\MyWebSolution\MyWebProject\bin\WebCustomControlSol.dll
-C:\test\8\04\MyWebSolution\MyWebProject\bin\WebCustomControlSol.pdb
-C:\test\8\04\MyWebSolution\MyWebProject\obj\Debug\MyWebProject.dll
-C:\test\8\04\MyWebSolution\MyWebProject\obj\Debug\MyWebProject.pdb
