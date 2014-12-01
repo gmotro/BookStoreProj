@@ -6,7 +6,7 @@
 
 <asp:Literal runat="server" Id="litBookID"></asp:Literal>
 
-    <Table ID="tbBookDetails" runat="server" visible="true" cellpadding="0" cellspacing="0" style="margin-bottom:5px;margin-top:5px" widht="100%>
+    <Table ID="tbBookDetails" runat="server" visible="true" cellpadding="0" cellspacing="0">
                 <tr>
                     <td>
                         <asp:Label runat="server" text="Author Last Name" ID="lbLastName"></asp:Label>
@@ -54,7 +54,7 @@
         <br />
         <br />
 
-        <Table ID="tbSaveData" runat="server" visible="true" cellpadding="0" cellspacing="0" style="margin-bottom:5px;margin-top:5px" widht="100%>
+        <Table ID="tbSaveData" runat="server" visible="true" cellpadding="0" cellspacing="0">
                 <tr>
                     <td>
                         <asp:button runat="server" text="Save" id="btnSave" OnClick="btnSave_Click"/>

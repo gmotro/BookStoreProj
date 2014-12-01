@@ -1,36 +1,46 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MyTestWebApp.Site" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Untitled Page</title>
+    <title>LibraryMate</title>
+    <link href="MasterCSS.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-        <h1 style="color:Red">Mysite.com Logo</h1>
+    <div id="container">
         
-        <table width="100%">
-            <tr valign="top">
-                <td style="width:200px">
-                    &nbsp;<asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Simple" NodeIndent="10">
-                        <ParentNodeStyle Font-Bold="False" />
-                        <HoverNodeStyle Font-Underline="True" ForeColor="#DD5555" />
-                        <SelectedNodeStyle Font-Underline="True" ForeColor="#DD5555" HorizontalPadding="0px"
-                            VerticalPadding="0px" />
-                        <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="0px"
-                            NodeSpacing="0px" VerticalPadding="0px" />
-                    </asp:TreeView>
-                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
-                </td>
-                <td>             
-                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                    </asp:ContentPlaceHolder>
-               </td>
-            </tr>
-        </table>
+        <div id="header">
+            <div id="headerLeft">
+                <img src="logo.JPG" alt="LibraryMate Logo" />
+            </div>
+            <div id="headerRight">
+                <img src="slogan.JPG" alt="Keep Track of Your Books, Authors, and Publishers." />
+            </div>
+        </div>
+
+        <div id="body">
+            <table>
+                <tr>
+                    <td id="leftColumn">
+                        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+                            <ParentNodeStyle />
+                            <HoverNodeStyle />
+                            <SelectedNodeStyle HorizontalPadding="0px"
+                                VerticalPadding="0px" />
+                            <NodeStyle HorizontalPadding="0px"
+                                NodeSpacing="0px" VerticalPadding="0px" />
+                        </asp:TreeView>
+                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                    </td>
+                    <td id="rightColumn">             
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                   </td>
+                </tr>
+            </table>
+        </div>
     </div>
     </form>
 </body>

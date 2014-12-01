@@ -99,6 +99,7 @@
     <Content Include="BookDetails.aspx" />
     <Content Include="InsertNewBook.aspx" />
     <Content Include="FrontPage.aspx" />
+    <Content Include="MasterCSS.css" />
     <Content Include="SearchBookInfo.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PreBuildEvent>copy $(SolutionDir)\WebCustomControlSol\*.ascx $(ProjectDir)\UserControls\</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

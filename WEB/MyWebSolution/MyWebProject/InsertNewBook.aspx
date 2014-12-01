@@ -62,7 +62,7 @@
         <br />
         <br />
 
-        <Table ID="tbSaveData" runat="server" visible="true" cellpadding="0" cellspacing="0" style="margin-bottom:5px;margin-top:5px" widht="100%>
+        <table ID="tbSaveData" runat="server" visible="true" cellpadding="0" cellspacing="0" style="margin-bottom:5px;margin-top:5px" widht="100%>
                 <tr>
                     <td>
                         <asp:button runat="server" text="Save" id="btnSave" OnClick="btnSave_Click"/>
@@ -71,6 +71,6 @@
                         <asp:button runat="server" text="Clear" id="btnCancel" OnClick="btnClear_Click" />                                            
                     </td>
                 </tr>
-        </Table>
+        </table>
 
 </asp:Content>

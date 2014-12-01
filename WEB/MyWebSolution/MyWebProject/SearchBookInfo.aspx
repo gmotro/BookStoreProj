@@ -9,7 +9,7 @@
         }
     </script>
 
-        <Table ID="tbBookDetails" runat="server" visible="true" cellpadding="0" cellspacing="0" style="margin-bottom:5px;margin-top:5px" widht="100%>
+        <table ID="tbBookDetails" runat="server" visible="true" cellpadding="0" cellspacing="0" style="margin-bottom:5px;margin-top:5px" widht="100%>
                 <tr>
                     <td>
                         <asp:Label runat="server" text="Author Last Name" ID="lbLastName"></asp:Label>
@@ -26,52 +26,50 @@
                         <asp:dropdownlist runat="server" id="ddGenre"></asp:dropdownlist>
                     </td>
                 </tr>
-            </Table>
+            </table>
 
 <asp:Button ID="bnSearch" runat="server" OnClick="bnSearch_Click" Text="Search" /><br />
 <br />
-<br />
 
-    <table id="resultContainer" runat="server" visible="true" cellpadding="0" cellspacing="0" style="margin-bottom:5px;margin-top:5px" widht="100%">
+    <table id="resultContainer" runat="server" visible="true" cellpadding="0" cellspacing="0">
         <tr>
             <td>
             <asp:GridView ID="BookInfoGrid" runat="server" AutoGenerateColumns="false"
-                          OnRowDataBound="BookInfoGrid_RowDataBound"
-                          BorderWidth="0" CellPadding="1" GridLines="None" Width="100%">
-                <RowStyle HorizontalAlign="Left" />
+                          OnRowDataBound="BookInfoGrid_RowDataBound">
+                <RowStyle />
                 <Columns>
            
-                    <asp:TemplateField HeaderText="Last Name"  HeaderStyle-Font-Bold="true" >
+                    <asp:TemplateField HeaderText="Last Name"  >
                         <ItemTemplate>                            
                             <asp:Label runat="server" ID="lbLastName" />
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="First Name" HeaderStyle-Font-Bold="true" >
+                    <asp:TemplateField HeaderText="First Name" >
                         <ItemTemplate>                 
                             <asp:Label runat="server" ID="lbFirstName" />
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Date Of Birth" HeaderStyle-Font-Bold="true" >
+                    <asp:TemplateField HeaderText="Date Of Birth"  >
                         <ItemTemplate>                 
                             <asp:Label runat="server" ID="lbDOB" />
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Title" HeaderStyle-Font-Bold="true" >
+                    <asp:TemplateField HeaderText="Title" >
                         <ItemTemplate>  
                             <asp:LinkButton runat="server" ID="linkTitle" />                                           
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="GenreName" HeaderStyle-Font-Bold="true" >
+                    <asp:TemplateField HeaderText="GenreName" >
                         <ItemTemplate>                 
                             <asp:Label runat="server" ID="lbGenre" />
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="PublisherName" HeaderStyle-Font-Bold="true" >
+                    <asp:TemplateField HeaderText="PublisherName"  >
                         <ItemTemplate>                 
                             <asp:Label runat="server" ID="lbPublisher" />
                         </ItemTemplate>

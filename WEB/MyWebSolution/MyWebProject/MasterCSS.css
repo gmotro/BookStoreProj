@@ -1,0 +1,117 @@
+﻿
+/*Universal CSS*/
+
+*
+{
+    color: #FFFFFF;
+}
+
+input
+{
+    color: #222222;
+}
+
+ul
+{
+    list-style: none;
+}
+
+a:link, a:visited 
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:hover 
+{
+    color: yellow;
+}
+
+a:active
+{
+    color: yellow;
+    text-decoration: underline;
+}
+
+table, tr
+{
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+td
+{
+    padding: 3px;
+}
+
+body
+{
+    background: #FFE699 url(background.jpg) repeat-x;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+#container
+{
+    width: 1000px;
+    height: auto;
+    margin: auto;
+    padding: 0px;
+    border: 2px solid #9F9784;
+    border-top: 0px
+}
+
+/*CSS for all header content*/
+
+#header
+{
+    width: 1000px;
+    height: 190px;
+    margin: 0px;   
+    padding: 0px;
+    border-bottom: 3px solid #9F9784;
+}
+
+#headerLeft
+{
+    width: 245px;
+    height: 190px;
+    margin:0px;
+    padding: 0px 0px 0px 5px;
+    float: left;
+}
+
+#headerRight
+{
+    width: 750px;
+    height: 120px;
+    margin: 0px;
+    padding: 70px 0px 0px 0px;
+    float: right;
+}
+
+/*CSS for all body content*/
+
+#body
+{
+    width: 1000px;
+    min-height: 250px;
+    margin:0px;
+    padding:0px;
+    background: #6D3E0A;
+}
+
+#leftColumn
+{
+    width: 200px;
+    padding: 5px;
+    vertical-align: top;
+}
+
+#rightColumn
+{
+    padding: 30px 5px 20px 70px;
+}
+
