@@ -42,7 +42,7 @@
 
                 <tr>
                     <td>
-                        <asp:label runat="server" text="Genre Name" ID="lbGenreName"></asp:label>
+                        <asp:label runat="server" text="Genre" ID="lbGenreName"></asp:label>
                     </td>
                     <td>
                         <asp:dropdownlist runat="server" id="ddGenre"></asp:dropdownlist>
@@ -51,7 +51,7 @@
 
                 <tr>
                     <td>
-                        <asp:label runat="server" text="Publisher Name" ID="lbPublisherName"></asp:label>
+                        <asp:label runat="server" text="Publisher" ID="lbPublisherName"></asp:label>
                     </td>
                     <td>                        
                         <asp:dropdownlist runat="server" id="ddPublisher"></asp:dropdownlist>

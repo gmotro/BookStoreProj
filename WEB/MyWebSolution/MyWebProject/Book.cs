@@ -71,8 +71,8 @@ namespace MyWebProject
 
             this.m_BookID = bookid;
             this.m_Title = m_tableBook.Rows[0]["Title"].ToString(); 
-            this.m_Author = new Author(m_tableBook.Rows[0]["AuthorLastName"].ToString()
-                                       , m_tableBook.Rows[0]["AuthorFirstName"].ToString()
+            this.m_Author = new Author(m_tableBook.Rows[0]["AuthorFirstName"].ToString()
+                                       , m_tableBook.Rows[0]["AuthorLastName"].ToString()
                                        , Convert.ToDateTime(m_tableBook.Rows[0]["Author_DOB"].ToString())
                                        );
             this.m_Genre = new Genre(m_tableBook.Rows[0]["GenreName"].ToString());

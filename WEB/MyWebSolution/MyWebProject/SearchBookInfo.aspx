@@ -64,13 +64,13 @@
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="GenreName" >
+                    <asp:TemplateField HeaderText="Genre" >
                         <ItemTemplate>                 
                             <asp:Label runat="server" ID="lbGenre" />
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="PublisherName"  >
+                    <asp:TemplateField HeaderText="Publisher"  >
                         <ItemTemplate>                 
                             <asp:Label runat="server" ID="lbPublisher" />
                         </ItemTemplate>

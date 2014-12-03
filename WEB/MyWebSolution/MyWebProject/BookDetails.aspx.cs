@@ -77,7 +77,7 @@ namespace MyWebProject
 
             currentbook.UpdateExistingBook();
 
-           // Page.ClientScript.RegisterStartupScript(Page.GetType(), "MessageBox", "<script language='javascript'>alert('Update have been saved to the Data Base');</script>");
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "MessageBox", "<script language='javascript'>alert('Update have been saved to the Data Base');</script>");
         }
     }
 }

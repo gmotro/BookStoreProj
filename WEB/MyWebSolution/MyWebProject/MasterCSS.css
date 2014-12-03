@@ -1,4 +1,4 @@
-﻿@import url(https://fonts.googleapis.com/css?famil=Roboto);
+﻿@import url(https://fonts.googleapis.com/css?family=Merriweather);
 
 
 /*Universal CSS*/
@@ -6,7 +6,7 @@
 *
 {
     color: #FFFFFF;
-    font-family: "Roboto", sans-serif;
+    font-family: "Merriweather", sans-serif;
 }
 
 input, select, option
