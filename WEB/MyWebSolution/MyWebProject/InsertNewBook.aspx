@@ -37,6 +37,7 @@
                     </td>
                     <td>
                         <asp:textbox runat="server" id="tbDOB"></asp:textbox>
+                        <asp:CompareValidator id="DateValidator" runat="server" Operator="DataTypeCheck" Type="Date" ControlToValidate="tbDOB" ErrorMessage="Bad DOB format" />
                     </td>
                 </tr>
 
