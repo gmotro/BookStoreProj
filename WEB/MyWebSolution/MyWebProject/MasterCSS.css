@@ -1,12 +1,15 @@
-﻿
+﻿@import url(https://fonts.googleapis.com/css?famil=Roboto);
+
+
 /*Universal CSS*/
 
 *
 {
     color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
 }
 
-input
+input, select, option
 {
     color: #222222;
 }
@@ -18,19 +21,19 @@ ul
 
 a:link, a:visited 
 {
-    color: #FFFFFF;
+    color: yellow;
     text-decoration: none;
 }
 
 a:hover 
 {
-    color: yellow;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 a:active
 {
-    color: yellow;
-    text-decoration: underline;
+    color: white;
 }
 
 table, tr
@@ -38,6 +41,20 @@ table, tr
     border: 0px;
     padding: 0px;
     margin: 0px;
+
+}
+
+table th, td
+{
+    border: 0px;
+    padding: 3px;
+    margin: 0px;
+}
+
+
+table th
+{
+    border-bottom: 1px solid #ffffff;
 }
 
 td
@@ -97,7 +114,6 @@ body
 #body
 {
     width: 1000px;
-    min-height: 250px;
     margin:0px;
     padding:0px;
     background: #6D3E0A;
@@ -106,12 +122,35 @@ body
 #leftColumn
 {
     width: 200px;
+    min-height: 250px;
     padding: 5px;
     vertical-align: top;
+    border-right: 1px solid #ffffff;
 }
 
 #rightColumn
 {
     padding: 30px 5px 20px 70px;
+}
+
+/* Book Details */
+
+#tbBookDetails
+{
+    background: #6D3E0A;
+    border: 1px solid white;
+    margin: 10px 0px 0px 10px;
+}
+
+#tbSaveData
+{
+    margin: 0px 0px 0px 10px;
+}
+
+/* Search Result Container */
+
+#resultContainer
+{
+    border: solid 5px #ffffff;
 }
 

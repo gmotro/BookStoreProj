@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SearchBookInfo.aspx.cs" Inherits="MyWebProject.SearchAuthor" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <script language="javascript" type="text/javascript">
         function getBookDetails(BookID)
         {
-            window.open("BookDetails.aspx?BookID=" + BookID, "_blank", "toolbar=0,width=780,height=500,resizable=1,scrollbars=1");
+            window.open("BookDetails.aspx?BookID=" + BookID, "_blank", "toolbar=0,width=400,height=450,resizable=1,scrollbars=1");
             return false;
         }
     </script>
@@ -31,7 +32,7 @@
 <asp:Button ID="bnSearch" runat="server" OnClick="bnSearch_Click" Text="Search" /><br />
 <br />
 
-    <table id="resultContainer" runat="server" visible="true" cellpadding="0" cellspacing="0">
+    <table id="resultContainer" runat="server" visible="true" cellpadding="0" cellspacing="0" style="padding:40px;">
         <tr>
             <td>
             <asp:GridView ID="BookInfoGrid" runat="server" AutoGenerateColumns="false"

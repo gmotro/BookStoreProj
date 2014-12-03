@@ -108,7 +108,7 @@ namespace MyWebProject
                 lableFirstName.Text = data["AuthorFirstName"].ToString();
 
                 Label lableDOB = (Label)row.FindControl("lbDOB");
-                lableDOB.Text = data["Author_DOB"].ToString();
+                lableDOB.Text = DateTime.Parse(data["Author_DOB"].ToString()).ToShortDateString();
 
                 LinkButton linkTitle = (LinkButton)row.FindControl("linkTitle");
                 linkTitle.Text = data["Title"].ToString();

@@ -1,10 +1,15 @@
 ﻿<%@ Page Title="AuthorDetails" Language="C#"  AutoEventWireup="true" CodeBehind="BookDetails.aspx.cs" Inherits="MyWebProject.AuthorDetails" %>
 
-
+<head runat="server">
+    <title>LibraryMate</title>
+    <link href="MasterCSS.css" rel="stylesheet" type="text/css" />
+</head>
 
 <form id="form1" runat="server">
 
 <asp:Literal runat="server" Id="litBookID"></asp:Literal>
+
+    <img src="logo.JPG" alt="LibraryMate Logo" />
 
     <Table ID="tbBookDetails" runat="server" visible="true" cellpadding="0" cellspacing="0">
                 <tr>
